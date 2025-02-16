@@ -4,7 +4,7 @@ import axios from "axios";
 import { IWeatherData } from "./IWeatherData";
 import * as dotenv from 'dotenv';
 
-dotenv.config();
+dotenv.config({ path: '.env' });
 
 // Define valid regions
 export type Region = 'Global' | 'NorthAmerica' | 'Europe' | 'Asia' | 'MiddleEast' | 'Africa' | 'SouthAmerica' | 'Oceania';

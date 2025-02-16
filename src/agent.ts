@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 import {HourlyTravelMonitor} from './HourlyTravelMonitor';
-dotenv.config();
+dotenv.config({ path: '.env' });
 
 
 // Example usage
