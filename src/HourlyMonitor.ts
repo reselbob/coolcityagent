@@ -8,7 +8,7 @@ async function runTravelMonitor() {
   const monitor = new HourlyTravelMonitor();
 
   // Start monitoring
-  monitor.start();
+  await monitor.start('NorthAmerica');
 
   // Optional: Stop after 24 hours
   setTimeout(() => {
