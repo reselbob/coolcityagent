@@ -2,8 +2,6 @@ import * as dotenv from 'dotenv';
 import {HourlyTravelMonitor} from './HourlyTravelMonitor';
 dotenv.config({ path: '.env' });
 
-
-// Example usage
 async function runTravelMonitor() {
   const monitor = new HourlyTravelMonitor();
 
@@ -17,5 +15,5 @@ async function runTravelMonitor() {
   }, 24 * 60 * 60 * 1000);
 }
 
-// Run the monitor
+// Run the agent
 runTravelMonitor().catch(console.error);
