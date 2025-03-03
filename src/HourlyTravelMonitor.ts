@@ -1,13 +1,21 @@
 import OpenAI from "openai";
-import { CronJob } from "cron";
+import {CronJob} from "cron";
 import axios from "axios";
-import { IWeatherData } from "./IWeatherData";
+import {IWeatherData} from "./IWeatherData";
 import * as dotenv from 'dotenv';
 
-dotenv.config({ path: '.env' });
+dotenv.config({path: '.env'});
 
 // Define valid regions
-export type Region = 'Global' | 'NorthAmerica' | 'Europe' | 'Asia' | 'MiddleEast' | 'Africa' | 'SouthAmerica' | 'Oceania';
+export type Region =
+    'Global'
+    | 'NorthAmerica'
+    | 'Europe'
+    | 'Asia'
+    | 'MiddleEast'
+    | 'Africa'
+    | 'SouthAmerica'
+    | 'Oceania';
 
 export class HourlyTravelMonitor {
     private openai: OpenAI;
@@ -71,7 +79,7 @@ export class HourlyTravelMonitor {
                     role: "user",
                     content: `${this.getRegionPrompt(region)} Return only a JSON array of objects with 'name' and 'country' properties.`
                 }],
-                response_format: { type: "json_object" },
+                response_format: {type: "json_object"},
                 temperature: 0.3
             });
 
@@ -126,7 +134,7 @@ Return your response in this JSON format:
                     role: "user",
                     content: prompt
                 }],
-                response_format: { type: "json_object" },
+                response_format: {type: "json_object"},
                 temperature: 0.5
             });
 
@@ -152,7 +160,7 @@ Return your response as a JSON array of strings, with each string being a sugges
                     role: "user",
                     content: prompt
                 }],
-                response_format: { type: "json_object" },
+                response_format: {type: "json_object"},
                 temperature: 0.7
             });
 
